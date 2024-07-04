@@ -14,11 +14,11 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem 'rspec-rails', '~> 6.1.0'
+  gem "rspec-rails", "~> 6.1.0"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
   gem "faker", "~> 3.4"
-  gem 'pry-rails'
+  gem "pry-rails"
 end
 
 group :development do
@@ -26,9 +26,9 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
   gem "factory_bot", "~> 6.4"
 end
 
 gem "devise", "~> 4.9"
-gem 'net-pop', github: 'ruby/net-pop'
+gem "net-pop", github: "ruby/net-pop"
