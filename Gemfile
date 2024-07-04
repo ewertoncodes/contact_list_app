@@ -31,3 +31,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'net-pop', github: 'ruby/net-pop'
