@@ -1,0 +1,22 @@
+<!-- app/views/layouts/_navbar.html.erb -->
+
+<nav style="background-color: #333; color: #fff; padding: 10px;">
+  <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <a href="/" style="color: #fff; font-size: 20px; text-decoration: none;">Meu Site</a>
+
+      <div style="margin-left: 20px;">
+        <!-- Links do Navbar -->
+        <a href="#" style="color: #ccc; text-decoration: none; margin-right: 10px;">Home</a>
+        <a href="#" style="color: #ccc; text-decoration: none;">Contatos</a>
+      </div>
+    </div>
+
+    <div>
+      <!-- Botão de Logout -->
+      <% if user_signed_in? %>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
