@@ -52,9 +52,9 @@ RSpec.feature 'User Authentication', type: :feature do
 
     click_button 'Logout'
     sleep 1
-  
-    visit root_path 
-  
+
+    visit root_path
+
     expect(page).not_to have_content('Signed out successfully.')
   end
 
