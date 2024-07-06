@@ -19,6 +19,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
   gem "faker", "~> 3.4"
   gem "pry-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -28,6 +29,7 @@ end
 group :test do
   gem "shoulda-matchers", "~> 6.0"
   gem "factory_bot", "~> 6.4"
+  gem "capybara"
 end
 
 gem "devise", "~> 4.9"
