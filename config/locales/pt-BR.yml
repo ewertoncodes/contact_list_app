@@ -1,0 +1,54 @@
+pt-BR:
+  errors:
+    messages:
+      not_saved: "não puderam ser salvos: %{errors}"
+      blank: 'não pode ficar em branco'
+      taken: 'já está em uso'
+      invalid: 'não é válido'
+  activerecord:
+    models:
+      user: 'Usuário'
+      contact: 'Contato'
+    attributes:
+      user:
+        email: 'Email'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de Senha'
+        name: 'Nome'
+        phone: 'Telefone'
+        address: 'Endereço'
+        postalcode: 'CEP'
+      contact:
+        name: 'Nome'
+        cpf: 'CPF'
+        phone: 'Telefone'
+        address: 'Endereço'
+        postalcode: 'CEP'
+    errors:
+      models:
+        contact: # Definir os atributos do modelo `Contact`
+          attributes:
+            name:
+              blank: 'não pode ficar em branco'
+            cpf:
+              blank: 'não pode ficar em branco'
+              taken: 'já está em uso'
+              invalid: 'não é válido'
+            phone:
+              blank: 'não pode ficar em branco'
+            address:
+              blank: 'não pode ficar em branco'
+            postalcode:
+              blank: 'não pode ficar em branco'
+        user:
+          attributes:
+            email:
+              blank: 'não pode ficar em branco'
+              taken: 'já está em uso'
+              invalid: 'não é válido'
+            password:
+              blank: 'não pode ficar em branco'
+            password_confirmation:
+              blank: 'não pode ficar em branco'
+              confirmation: 'não confere com a senha'
+

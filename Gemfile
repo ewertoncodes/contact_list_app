@@ -34,3 +34,5 @@ end
 
 gem "devise", "~> 4.9"
 gem "net-pop", github: "ruby/net-pop"
+
+gem "cpf_cnpj", "~> 0.5.0"
