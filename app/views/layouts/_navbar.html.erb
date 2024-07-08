@@ -1,12 +1,17 @@
 <nav class="bg-gray-800 p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex">
-            <a href="/" class="text-white text-lg font-semibold">UEX Tecnologia</a>
-        </div>
-        <div class="flex">
-            <% if user_signed_in? %>
-              <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-            <% end %>
-        </div>
-    </div>
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex">
+		<a href="/" class="text-white text-lg font-semibold">UEX Tecnologia</a>
+</div>
+<% if user_signed_in? %>
+<div class="flex">
+	<a href="<%= edit_user_registration_path %>"
+	class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+	<%= current_user.email %> (Editar Perfil)
+	</a>
+<% end %>
+</div>
+	<div class="flex">
+	<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+	</div>
 </nav>
