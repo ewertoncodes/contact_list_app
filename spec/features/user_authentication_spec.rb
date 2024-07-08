@@ -12,8 +12,8 @@ RSpec.feature 'User Authentication', type: :feature do
       fill_in "Nome", with: "João da Silva"
       fill_in "CPF", with: "123.456.789-00"
       fill_in "Telefone", with: "(11) 99999-9999"
-      fill_in "Endereço Completo", with: "Rua Exemplo, 123"
-      fill_in "CEP", with: "12345-678"
+      fill_in "address", with: "Rua Exemplo, 123"
+      fill_in "postalcode", with: "12345-678"
     end
 
     click_button "Registrar-se"

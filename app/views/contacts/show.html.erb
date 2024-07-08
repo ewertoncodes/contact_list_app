@@ -1,0 +1,38 @@
+<%= link_to 'Voltar', contacts_path, class: 'btn btn-secondary' %>
+
+<h1>Contacts</h1>
+
+<%= @contact.name %>
+
+<div id="map" style="height: 400px;"></div>
+
+<script>
+  function initMap() {
+    // Verificar se o mapa já foi inicializado para evitar erros
+    if (typeof google === 'undefined') {
+      return;
+    }
+
+    // Localização do contato (latitude e longitude)
+    var contatoLocation = { lat: <%= @contact.latitude %>, lng: <%= @contact.longitude %> };
+
+    // Opções do mapa
+    var mapOptions = {
+      zoom: 15, // Zoom inicial
+      center: contatoLocation // Centro do mapa inicial
+    };
+
+    // Criar o mapa
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    // Adicionar marcador
+    var marker = new google.maps.Marker({
+      position: contatoLocation,
+      map: map,
+      title: '<%= @contact.name %>' // Título do marcador
+    });
+  }
+
+  // Inicializar o mapa quando a página carregar ou Turbolinks carregar a página
+  document.addEventListener('turbolinks:load', initMap);
+</script>

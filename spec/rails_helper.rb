@@ -88,4 +88,8 @@ RSpec.configure do |config|
   config.before(:suite) do
     FactoryBot.reload
   end
+
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Warden::Test::Helpers, type: :feature
+  config.after(type: :feature) { Warden.test_reset! }
 end

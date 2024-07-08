@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root to: "home#index"
+  root to: "contacts#index"
+  resources :contacts
   get "/via_cep/consultar_via_cep", to: "via_cep#consultar_via_cep"
 end

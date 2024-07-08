@@ -11,6 +11,12 @@ gem "tailwindcss-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem "devise", "~> 4.9"
+gem "net-pop", github: "ruby/net-pop"
+gem "cpf_cnpj", "~> 0.5.0"
+gem "webmock", "~> 3.23"
+gem "httparty", "~> 0.22.0"
+gem "pagy", "~> 8.6"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -33,11 +39,4 @@ group :test do
   gem "capybara"
 end
 
-gem "devise", "~> 4.9"
-gem "net-pop", github: "ruby/net-pop"
 
-gem "cpf_cnpj", "~> 0.5.0"
-
-gem "webmock", "~> 3.23"
-
-gem "httparty", "~> 0.22.0"

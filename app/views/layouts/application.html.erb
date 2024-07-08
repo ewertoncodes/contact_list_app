@@ -15,7 +15,6 @@
     <!-- Adicione isso dentro da seção <head> do seu HTML -->
     <script>
       const apiKey = "<%= ENV['GOOGLE_MAPS_API_KEY'] %>";
-      alert(apiKey)
     </script>
 
       
@@ -28,5 +27,7 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" defer></script>
   </body>
 </html>

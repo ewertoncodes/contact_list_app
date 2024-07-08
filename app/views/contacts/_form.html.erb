@@ -1,0 +1,52 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div style="color: red;">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Nome" %><br />
+    <%= form.text_field :name, class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf, "CPF" %><br />
+    <%= form.text_field :cpf, class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, "Telefone" %><br />
+    <%= form.text_field :phone, class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postalcode, "CEP" %><br />
+    <%= form.text_field :postalcode, id: "postalcode",class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, "Endereço" %><br />
+    <%= form.text_field :address,id:"address", class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude, "Latitude" %><br />
+    <%= form.text_field :latitude, id:"latitude", class: "border rounded py-2 px-3 w-full" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude, "Longitude" %><br />
+    <%= form.text_field :longitude, id: "longitude", class: "border rounded py-2 px-3 w-full" %>   
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>

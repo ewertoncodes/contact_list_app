@@ -40,5 +40,7 @@ module ContactListApp
     config.generators.system_tests = nil
     config.i18n.default_locale = :"pt-BR"
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+    # config/application.rb
+    config.autoload_paths += %W[#{config.root}/app/queries]
   end
 end
