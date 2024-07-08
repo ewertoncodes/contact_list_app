@@ -38,5 +38,3 @@ group :test do
   gem "factory_bot", "~> 6.4"
   gem "capybara"
 end
-
-

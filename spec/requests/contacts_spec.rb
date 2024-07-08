@@ -7,7 +7,7 @@ RSpec.describe "Contacts", type: :request do
     it "renders a successful response" do
       user = create(:user) # Usar FactoryBot ou criar manualmente um usuário
       sign_in user
-      
+
       get contacts_path
       expect(response).to be_successful
     end
