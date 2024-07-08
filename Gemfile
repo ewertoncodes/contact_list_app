@@ -20,6 +20,7 @@ group :development, :test do
   gem "faker", "~> 3.4"
   gem "pry-rails"
   gem "factory_bot_rails"
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -36,3 +37,7 @@ gem "devise", "~> 4.9"
 gem "net-pop", github: "ruby/net-pop"
 
 gem "cpf_cnpj", "~> 0.5.0"
+
+gem "webmock", "~> 3.23"
+
+gem "httparty", "~> 0.22.0"

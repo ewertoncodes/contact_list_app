@@ -50,13 +50,23 @@
       </div>
 
       <div class="field">
+        <%= contact_fields.label :postalcode, "CEP" %><br />
+        <%= contact_fields.text_field :postalcode %>
+      </div>
+
+      <div class="field">
         <%= contact_fields.label :address, "Endereço Completo" %><br />
         <%= contact_fields.text_field :address %>
       </div>
 
       <div class="field">
-        <%= contact_fields.label :postalcode, "CEP" %><br />
-        <%= contact_fields.text_field :postalcode %>
+        <%= contact_fields.label :latitude %><br />
+        <%= contact_fields.text_field :latitude, id: "latitude" %>
+      </div>
+
+      <div class="field">
+        <%= contact_fields.label :longitude %><br />
+        <%= contact_fields.text_field :longitude, id: "longitude" %>
       </div>
     </div>
   <% end %>
