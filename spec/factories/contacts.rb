@@ -2,7 +2,7 @@
 FactoryBot.define do
   factory :contact do
     sequence(:name) { |n| "Contact #{n}" }
-    cpf { '01652700471' }
+    cpf { CPF.generate } 
     phone { '123456789' }
     address { 'Rua Exemplo, 123' }
     postalcode { '12345-678' }
