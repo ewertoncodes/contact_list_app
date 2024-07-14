@@ -9,7 +9,7 @@ document.addEventListener("turbo:load", function() {
 
     if (postalcodeValue.length === 8 && !isNaN(postalcodeValue)) {
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "/via_cep/consultar_via_cep?postcode=" + postalcodeValue, true);
+      xhr.open("GET", "/via_cep/get_via_cep?zipcode=" + postalcodeValue, true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
           var response = JSON.parse(xhr.responseText);

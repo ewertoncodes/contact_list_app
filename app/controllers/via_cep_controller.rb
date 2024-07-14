@@ -2,16 +2,17 @@
 class ViaCepController < ApplicationController
   require "httparty"
 
-  def consultar_via_cep
-    cep = params[:postcode]
-    url = "https://viacep.com.br/ws/#{cep}/json/"
+  def get_via_cep
+    zipcode = params[:zipcode]
 
-    response = HTTParty.get(url)
+    begin
+      address = ViaCep.get_address(zipcode)
 
-    if response.code == 200 && response.parsed_response["erro"]
-      render json: { error: "CEP não encontrado" }, status: :not_found
-    else
-      render json: response.parsed_response
+      render json: address
+    rescue ArgumentError => e
+      render json: { error: e.message }, status: :bad_request
+    rescue StandardError => e
+      render json: { error: e.message }, status: :not_found
     end
   end
 end

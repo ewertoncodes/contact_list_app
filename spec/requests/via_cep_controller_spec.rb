@@ -2,10 +2,10 @@
 require 'rails_helper'
 
 RSpec.describe ViaCepController, type: :controller do
-  describe "GET #consultar_via_cep" do
-    context "com um CEP válido" do
-      let(:cep) { "12345678" }
-      let(:url) { "https://viacep.com.br/ws/#{cep}/json/" }
+  describe "GET #get_via_cep" do
+    context "when zipcode is valid" do
+      let(:zipcode) { "12345678" }
+      let(:url) { "https://viacep.com.br/ws/#{zipcode}/json/" }
       let(:endereco_completo) { "Rua Exemplo, São Paulo - SP" }
       let(:response_body) do
         {
@@ -20,8 +20,8 @@ RSpec.describe ViaCepController, type: :controller do
           .to_return(status: 200, body: response_body, headers: {})
       end
 
-      it "retorna o endereço completo" do
-        get :consultar_via_cep, params: { postcode: cep }, format: :json
+      it "returns the address" do
+        get :get_via_cep, params: { zipcode: zipcode }, format: :json
         expect(response).to have_http_status(:success)
         parsed_response = JSON.parse(response.body)
         expect(parsed_response["logradouro"]).to eq("Rua Exemplo")
@@ -30,9 +30,9 @@ RSpec.describe ViaCepController, type: :controller do
       end
     end
 
-    context "com um CEP inválido" do
-      let(:cep) { "00000000" }
-      let(:url) { "https://viacep.com.br/ws/#{cep}/json/" }
+    context "when zipcode is invalid" do
+      let(:zipcode) { "00000000" }
+      let(:url) { "https://viacep.com.br/ws/#{zipcode}/json/" }
       let(:response_body) do
         {
           erro: true
@@ -44,9 +44,18 @@ RSpec.describe ViaCepController, type: :controller do
           .to_return(status: 200, body: response_body, headers: {})
       end
 
-      it "retorna status não encontrado" do
-        get :consultar_via_cep, params: { postcode: cep }, format: :json
+      it "returns status not found" do
+        get :get_via_cep, params: { zipcode: zipcode }, format: :json
         expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    context "when zipcode is empty" do
+      let(:zipcode) { "" }
+
+      it "returns status bad request" do
+        get :get_via_cep, params: { zipcode: zipcode }, format: :json
+        expect(response).to have_http_status(:bad_request)
       end
     end
   end

@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "contacts#index"
   resources :contacts
-  get "/via_cep/consultar_via_cep", to: "via_cep#consultar_via_cep"
+  get "/via_cep/get_via_cep", to: "via_cep#get_via_cep"
 end

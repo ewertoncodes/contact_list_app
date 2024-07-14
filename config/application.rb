@@ -42,5 +42,6 @@ module ContactListApp
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
     # config/application.rb
     config.autoload_paths += %W[#{config.root}/app/queries]
+    config.autoload_paths << Rails.root.join("lib")
   end
 end

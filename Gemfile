@@ -14,7 +14,6 @@ gem "bootsnap", require: false
 gem "devise", "~> 4.9"
 gem "net-pop", github: "ruby/net-pop"
 gem "cpf_cnpj", "~> 0.5.0"
-gem "webmock", "~> 3.23"
 gem "httparty", "~> 0.22.0"
 gem "pagy", "~> 8.6"
 
@@ -37,4 +36,6 @@ group :test do
   gem "shoulda-matchers", "~> 6.0"
   gem "factory_bot", "~> 6.4"
   gem "capybara"
+  gem "webmock", "~> 3.23"
+  gem "vcr"
 end
