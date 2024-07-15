@@ -1,7 +1,4 @@
-# app/controllers/via_cep_controller.rb
 class ViaCepController < ApplicationController
-  require "httparty"
-
   def get_via_cep
     zipcode = params[:zipcode]
 
