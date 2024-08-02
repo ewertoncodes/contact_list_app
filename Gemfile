@@ -15,7 +15,7 @@ gem "devise", "~> 4.9"
 gem "net-pop", github: "ruby/net-pop"
 gem "cpf_cnpj", "~> 0.5.0"
 gem "httparty", "~> 0.22.0"
-gem "pagy", "~> 8.6"
+gem "pagy", "~> 9.0"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
