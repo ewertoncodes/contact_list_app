@@ -33,7 +33,7 @@ group :development do
 end
 
 group :test do
-  gem "shoulda-matchers", "~> 6.0"
+  gem "shoulda-matchers", "~> 6.3"
   gem "factory_bot", "~> 6.4"
   gem "capybara"
   gem "webmock", "~> 3.23"
